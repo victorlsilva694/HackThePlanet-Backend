@@ -58,7 +58,7 @@ class AdministrationController extends Controller
     {
         $validatedData = $request->validate([
             'id' => 'required',
-            'file' => 'required|mimes:jpeg,png,pdf|max:2048',
+            'file' => 'required|mimes:jpeg,png,pdf,doc,docx,xls,xlsx,ppt,pptx|max:204800',
             'name' => 'required'
         ]);
 
@@ -83,8 +83,6 @@ class AdministrationController extends Controller
         return response()->json(['file' => "{$directory}\{$filename}"]);
     }
 
-
-
     public function getUserFiles(Request $request)
     {
         $userID = $request->route('id');
@@ -99,12 +97,9 @@ class AdministrationController extends Controller
 
         foreach ($userFiles as $file) {
             $filePath = storage_path('app/files_private/' . $file->user_name . '_' . $file->user_id);
-
             if (File::exists($filePath)) {
                 $files = File::allFiles($filePath);
                 foreach ($files as $fileInfo) {
-
-                    
                     $fileSize = $fileInfo->getSize();
                     $fileSizeMB = round($fileSize / 1024 / 1024, 2);
 
@@ -117,6 +112,46 @@ class AdministrationController extends Controller
             }
             return response()->json(['file_payload' => $filePayload]);
         }
+    }
 
+    public function deleteTravelById($id)
+    {
+        $buttonTravelSelected = AdministrationTravel::find($id);
+
+        if ($buttonTravelSelected) {
+            $buttonTravelSelected->delete();
+            return response()->json(['message' => 'Registro excluído com sucesso']);
+        }
+
+        return response()->json(['message' => 'Registro não encontrado'], 404);
+    }
+
+    public function deleteFileById(Request $request)
+    {
+        $file_name = $request->route('name');
+        $username = $request->route('username');
+        $user_id = $request->route('user_id');
+        $file_id = $request->route('id');
+
+        $filePath = storage_path('app/files_private/' . $username . "_" . $user_id . '/' . $file_name);
+
+        if ($filePath) {
+            if (File::exists($filePath)) {
+                File::delete($filePath);
+            }
+        } else {
+            return response()->json(['message' => 'Arquivo não encontrado'], 404);
+        }
+
+        $fileExists = DB::table('user_files')
+            ->where('id', $file_id)
+            ->exists();
+
+        if ($fileExists) {
+            DB::table('user_files')
+                ->where('id', $file_id)
+                ->delete();
+            return response()->json(['message' => 'Arquivo excluído da base de dados com sucesso']);
+        }
     }
 }

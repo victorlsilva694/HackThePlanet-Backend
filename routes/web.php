@@ -25,3 +25,5 @@ Route::post('/api/dashboard/new/transaction', [AdministrationController::class, 
 Route::post('/api/dashboard/upload/files_private', [AdministrationController::class, 'uploadFile']);
 Route::get('/api/dashboard/getAll/transactions/{id}', [AdministrationController::class, 'getValuesByUserId']);
 Route::get('/api/dashboard/getAll/files/{id}', [AdministrationController::class, 'getUserFiles']);
+Route::get('/api/dashboard/delete/travel/{id}', [AdministrationController::class, 'deleteTravelById']);
+Route::get('/api/dashboard/delete/file/{name}/{id}/{username}/{user_id}', [AdministrationController::class, 'deleteFileById']);
