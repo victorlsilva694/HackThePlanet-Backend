@@ -110,8 +110,9 @@ class AdministrationController extends Controller
                     ];
                 }
             }
-            return response()->json(['file_payload' => $filePayload]);
+            return response()->json(['file_payload' => $filePayload, 'all_files_selected' => $userFiles]);
         }
+        
     }
 
     public function deleteTravelById($id)
