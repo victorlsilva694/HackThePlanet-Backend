@@ -1,4 +1,4 @@
-<p align="center"># HackThePlanet</p>
+# HackThePlanet
 
 O HackThePlanet é uma aplicação Laravel multifuncional projetada para documentação, agendamento de viagens e armazenamento de arquivos. Esta aplicação tem como objetivo fornecer uma solução completa para gerenciar todas as suas necessidades relacionadas a viagens, documentos e arquivos importantes.
 
