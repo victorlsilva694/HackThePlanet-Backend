@@ -22,7 +22,7 @@ Para executar o HackThePlanet em seu ambiente, você precisará atender aos segu
 - Composer (para gerenciar as dependências do Laravel)
 - Extensões PHP necessárias (consulte a documentação oficial do Laravel para obter detalhes)
 
-## Instalação
+## Tutorial de instalação
 
 Siga as etapas abaixo para instalar e configurar o HackThePlanet:
 
