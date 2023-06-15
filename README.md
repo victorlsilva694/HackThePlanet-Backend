@@ -1,66 +1,53 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# HackThePlanet
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+O HackThePlanet é uma aplicação Laravel multifuncional projetada para documentação, agendamento de viagens e armazenamento de arquivos. Esta aplicação tem como objetivo fornecer uma solução completa para gerenciar todas as suas necessidades relacionadas a viagens, documentos e arquivos importantes.
 
-## About Laravel
+## Funcionalidades
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### 1. Documentação
+A funcionalidade de documentação permite que você crie e gerencie documentos importantes de forma eficiente. Você pode criar, visualizar, editar e excluir documentos diretamente na plataforma. Além disso, você pode organizar seus documentos em categorias ou marcá-los com tags para facilitar a pesquisa e o acesso rápido.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 2. Agendamento de viagens
+Com o HackThePlanet, você pode marcar suas viagens e manter todos os detalhes importantes em um só lugar. A funcionalidade de agendamento de viagens permite que você adicione informações sobre datas, horários, destinos, voos, hotéis e muito mais. Você também pode adicionar notas e lembretes para cada viagem, garantindo que você esteja sempre bem preparado.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 3. Armazenamento de arquivos
+A aplicação oferece uma opção segura para armazenar seus arquivos importantes. Você pode fazer upload de documentos, imagens, vídeos e qualquer outro tipo de arquivo para o HackThePlanet. Os arquivos são armazenados de forma segura e você pode acessá-los a qualquer momento. Além disso, você pode organizar seus arquivos em pastas para uma melhor organização e facilidade de acesso.
 
-## Learning Laravel
+## Requisitos do Sistema
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Para executar o HackThePlanet em seu ambiente, você precisará atender aos seguintes requisitos:
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+- PHP 7.4 ou superior
+- Banco de dados MySQL, PostgreSQL ou SQLite
+- Composer (para gerenciar as dependências do Laravel)
+- Extensões PHP necessárias (consulte a documentação oficial do Laravel para obter detalhes)
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Instalação
 
-## Laravel Sponsors
+Siga as etapas abaixo para instalar e configurar o HackThePlanet:
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+1. Clone o repositório do HackThePlanet para o seu ambiente local:
 
-### Premium Partners
+https://github.com/victorlsilva694/HackThePlanet-Backend
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+2. Acesse o diretório do projeto:
+cd hacktheplanet
 
-## Contributing
+3. Instale as dependências do projeto usando o Composer:
+composer install
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+4. Faça uma cópia do arquivo `.env.example` e renomeie-o para `.env`. Configure as informações do banco de dados no arquivo `.env` com suas credenciais adequadas.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+5. Gere uma nova chave de aplicação executando o comando:
+php artisan key:generate
 
-## Security Vulnerabilities
+6. Execute as migrações do banco de dados para criar as tabelas necessárias:
+php artisan migrate
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
+7. Inicie o servidor de desenvolvimento:
+php artisan serve
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+Após seguir essas etapas, você poderá acessar a aplicação HackThePlanet usando o endereço `http://localhost:8000` como endpoint padrão.
